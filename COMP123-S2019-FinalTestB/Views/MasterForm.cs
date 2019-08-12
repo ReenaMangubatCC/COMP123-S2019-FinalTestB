@@ -7,7 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/*
+ * STUDENT NAME: Reena Mangubat
+ * STUDENT ID: 301000701
+ * DESCRIPTION: This is the MasterForm
+ * */
 namespace COMP123_S2019_FinalTestB.Views
 {
     public partial class MasterForm : Form
@@ -15,6 +19,11 @@ namespace COMP123_S2019_FinalTestB.Views
         public MasterForm()
         {
             InitializeComponent();
+        }
+
+        private void MasterForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

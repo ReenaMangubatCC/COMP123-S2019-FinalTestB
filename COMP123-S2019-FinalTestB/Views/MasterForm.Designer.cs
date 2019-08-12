@@ -43,6 +43,7 @@
             this.Name = "MasterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Master Form";
+            this.Load += new System.EventHandler(this.MasterForm_Load);
             this.ResumeLayout(false);
 
         }
