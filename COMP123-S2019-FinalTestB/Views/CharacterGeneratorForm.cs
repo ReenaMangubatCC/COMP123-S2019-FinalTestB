@@ -55,15 +55,21 @@ namespace COMP123_S2019_FinalTestB.Views
             string lastNamesFile = @"..\..\Data\lastNames.txt";
 
 
-            using (StreamReader allFirstNames = new StreamReader(firstNamesFile))
+            using (StreamReader allFirstNames = new StreamReader(firstNamesFile, FileMode.Open))
             {
                 Program.character.FirstName = allFirstNames.ReadLine();
-                
+                //Cleanup
+                allFirstNames.Dispose();
+                allFirstNames.Close();
+
             }
 
             using (StreamReader allLastNames = new StreamReader(lastNamesFile))
             {
                 Program.character.LastName = allLastNames.ReadLine();
+
+                allLastNames.Dispose();
+                allLastNames.Close();
             }
 
 
@@ -79,7 +85,6 @@ namespace COMP123_S2019_FinalTestB.Views
 
             FirstName.Add(Program.character.FirstName);
             LastName.Add(Program.character.LastName);
-
 
 
         }
@@ -115,6 +120,25 @@ namespace COMP123_S2019_FinalTestB.Views
             IntelligenceDataLabel.Text = intelligenceAbility.Next(3, 18).ToString();
             WisdomDataLabel.Text = wisdomAbility.Next(3, 18).ToString();
             CharismaDataLabel.Text = charismaAbility.Next(3, 18).ToString();
+        }
+        /// <summary>
+        /// This is the event handler for the generateInventoryButton click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GenerateInventoryButton_Click(object sender, EventArgs e)
+        {
+            string inventoryFileName = @"..\..\Data\inventory.txt";
+           
+            using(StreamReader inventoryItems = new StreamReader(inventoryFileName))
+            {
+               
+            }
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

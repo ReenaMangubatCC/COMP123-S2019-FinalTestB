@@ -34,13 +34,13 @@ namespace COMP123_S2019_FinalTestB.Objects
         public int Level { get; set; }
 
         //Equipment
-        List<Item> Inventory;
+        List<string> Inventory;
 
 
         //Constructor 
         public Character()
         {
-            this.Inventory = new List<Item>();
+            this.Inventory = new List<string>();
         }
 
 

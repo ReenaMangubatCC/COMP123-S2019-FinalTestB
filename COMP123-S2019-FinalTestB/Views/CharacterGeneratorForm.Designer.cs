@@ -84,6 +84,12 @@
             this.ItemSlotDataThreeLabel = new System.Windows.Forms.Label();
             this.ItemSlotDataFourLabel = new System.Windows.Forms.Label();
             this.ItemSlotDataTwoLabel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.HeroNameLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.HeroSaveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.HeroOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.MainTabControl.SuspendLayout();
             this.IdentityPage.SuspendLayout();
             this.IdentityTableLayoutPanel.SuspendLayout();
@@ -94,6 +100,7 @@
             this.MainToolStrip.SuspendLayout();
             this.MainMenuStrip.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainTabControl
@@ -450,6 +457,7 @@
             // 
             // CharacterPage
             // 
+            this.CharacterPage.Controls.Add(this.tableLayoutPanel2);
             this.CharacterPage.Controls.Add(this.MainToolStrip);
             this.CharacterPage.Controls.Add(this.MainMenuStrip);
             this.CharacterPage.Location = new System.Drawing.Point(4, 38);
@@ -542,13 +550,13 @@
             this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.openToolStripMenuItem.Text = "&Open";
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(170, 6);
+            this.toolStripSeparator.Size = new System.Drawing.Size(213, 6);
             // 
             // saveToolStripMenuItem
             // 
@@ -556,18 +564,19 @@
             this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.saveToolStripMenuItem.Text = "&Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(170, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(213, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.exitToolStripMenuItem.Text = "E&xit";
             // 
             // helpToolStripMenuItem
@@ -686,6 +695,7 @@
             this.GenerateInventoryButton.TabIndex = 5;
             this.GenerateInventoryButton.Text = "Generate Inventory";
             this.GenerateInventoryButton.UseVisualStyleBackColor = true;
+            this.GenerateInventoryButton.Click += new System.EventHandler(this.GenerateInventoryButton_Click);
             // 
             // ItemSlotDataOneLabel
             // 
@@ -721,6 +731,57 @@
             this.ItemSlotDataTwoLabel.TabIndex = 9;
             this.ItemSlotDataTwoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 4;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.Controls.Add(this.HeroNameLabel, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label2, 2, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(5, 61);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(763, 350);
+            this.tableLayoutPanel2.TabIndex = 2;
+            // 
+            // HeroNameLabel
+            // 
+            this.HeroNameLabel.Location = new System.Drawing.Point(1, 0);
+            this.HeroNameLabel.Name = "HeroNameLabel";
+            this.HeroNameLabel.Size = new System.Drawing.Size(189, 83);
+            this.HeroNameLabel.TabIndex = 0;
+            this.HeroNameLabel.Text = "Hero Name:";
+            this.HeroNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(-2, 83);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(192, 88);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Abilities:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(382, 148);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(8, 9);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "label2";
+            // 
+            // HeroOpenFileDialog
+            // 
+            this.HeroOpenFileDialog.FileName = "openFileDialog1";
+            // 
             // CharacterGeneratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -743,6 +804,8 @@
             this.MainMenuStrip.ResumeLayout(false);
             this.MainMenuStrip.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -804,5 +867,11 @@
         private System.Windows.Forms.Label ItemSlotDataOneLabel;
         private System.Windows.Forms.Label ItemSlotDataThreeLabel;
         private System.Windows.Forms.Label ItemSlotDataFourLabel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label HeroNameLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.SaveFileDialog HeroSaveFileDialog;
+        private System.Windows.Forms.OpenFileDialog HeroOpenFileDialog;
     }
 }
