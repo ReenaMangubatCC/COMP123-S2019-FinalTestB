@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 /*
@@ -43,6 +44,46 @@ namespace COMP123_S2019_FinalTestB.Views
             {
                 MainTabControl.SelectedIndex++;
             }
+        }
+
+        public static void LoadNames()
+        {
+            string firstNamesFile = @"..\..\Data\firstNames.txt";
+
+            using (StreamReader allFirstNames = new StreamReader(
+                FileMode.Open(firstNamesFile, FileMode.Open)))
+            {
+                
+            }
+        }
+
+        public static void GenerateNames()
+        {
+
+
+        }
+
+        private void GenerateNameButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GenerateAbilitiesButton_Click(object sender, EventArgs e)
+        { 
+
+            Random strengthAbility = new Random();
+            Random dexterityAbility =  new Random();
+            Random constitutionAbility = new Random();
+            Random intelligenceAbility = new Random();
+            Random wisdomAbility = new Random();
+            Random charismaAbility = new Random();
+
+            StrengthDataLabel.Text = strengthAbility.Next(3, 18).ToString();
+            DexterityDataLabel.Text = dexterityAbility.Next(3, 18).ToString();
+            ConstitutionDataLabel.Text = constitutionAbility.Next(3, 18).ToString();
+            IntelligenceDataLabel.Text = intelligenceAbility.Next(3, 18).ToString();
+            WisdomDataLabel.Text = wisdomAbility.Next(3, 18).ToString();
+            CharismaDataLabel.Text = charismaAbility.Next(3, 18).ToString();
         }
     }
 }

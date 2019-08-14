@@ -1,4 +1,5 @@
-﻿using COMP123_S2019_FinalTestB.Views;
+﻿using COMP123_S2019_FinalTestB.Objects;
+using COMP123_S2019_FinalTestB.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
