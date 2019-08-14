@@ -38,7 +38,7 @@ namespace COMP123_S2019_FinalTestB.Objects
 
 
         //Constructor 
-        Character()
+        public Character()
         {
             this.Inventory = new List<Item>();
         }

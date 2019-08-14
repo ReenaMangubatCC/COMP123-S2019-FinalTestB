@@ -46,28 +46,59 @@ namespace COMP123_S2019_FinalTestB.Views
             }
         }
 
+        /// <summary>
+        /// This is a method to load all of the names by reading the existing name text files
+        /// </summary>
         public static void LoadNames()
         {
             string firstNamesFile = @"..\..\Data\firstNames.txt";
+            string lastNamesFile = @"..\..\Data\lastNames.txt";
 
-            using (StreamReader allFirstNames = new StreamReader(
-                FileMode.Open(firstNamesFile, FileMode.Open)))
+
+            using (StreamReader allFirstNames = new StreamReader(firstNamesFile))
             {
+                Program.character.FirstName = allFirstNames.ReadLine();
                 
             }
+
+            using (StreamReader allLastNames = new StreamReader(lastNamesFile))
+            {
+                Program.character.LastName = allLastNames.ReadLine();
+            }
+
+
         }
 
+        /// <summary>
+        /// This is a method to generate a full name using the previously read files
+        /// </summary>
         public static void GenerateNames()
         {
+            List<string> FirstName = new List<string>();
+            List<string> LastName = new List<string>();
+
+            FirstName.Add(Program.character.FirstName);
+            LastName.Add(Program.character.LastName);
+
 
 
         }
 
+        /// <summary>
+        /// This is the event handler for the GenerateNameButton click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GenerateNameButton_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// This is the event handler for the GenerateAbilities click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GenerateAbilitiesButton_Click(object sender, EventArgs e)
         { 
 
